@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <title>Budget Tracker</title>
+</head>
+<body class="yellow">
+
+    <header class="yellow darken-1 section">
+        <h2 class="center brown-text">Tracker Monkey</h2>
+        <p class="flow-text brown-text center text-lighten-2"> Monthly Money Tracker</p>
+    </header>
+
+    <div class="container section">
+        <div class="row">
+            <div class="col s12 m6">
+                <form class="card z-depth-0">
+                    <div class="card-content">
+                        <span class="card-title brown-text">Add Item:</span>
+
+                        <div class="input-field">
+                            <input type="text" id="name">
+                            <label for="name">Item Name</label>
+                        </div>
+
+                        <div class="input-field">
+                                <input type="text" id="cost">
+                                <label for="cost">Item Cost ($)</label>
+                        </div>
+
+                        <div class="input-field center">
+                                <button class="btn-large brown yellow-text"> Add Item</button>
+                        </div>
+
+                        <div class="input-field center">
+                                <p class="red-text" id="error"></p>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col s12 m5 push-m1">
+                <div class="canvas"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCvsGyU97hSTOfSP6Sovx-gpF3CrooP19s",
+        authDomain: "dhree-4e4c4.firebaseapp.com",
+        databaseURL: "https://dhree-4e4c4.firebaseio.com",
+        projectId: "dhree-4e4c4",
+        storageBucket: "dhree-4e4c4.appspot.com",
+        messagingSenderId: "507013382303"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+    </script>
+
+
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="index.js"></script>
+    <script src="graph.js"></script>
+
+
+
+</body>
+</html>
